@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <title>Contacts</title>
+    <title>Contact php</title>
 </head>
 <body>
 
@@ -18,22 +18,10 @@ $contacts = [
     "adress" => $_GET["adresse"]
 ];
 
-if(empty($_GET["nom"])) {
-    echo "Votre nom est vide";
-    echo "<br>";
-} if(empty($_GET["prenom"])) {
-    echo "Votre prenom est vide";
-    echo "<br>";
-} if (empty($_GET["mail"])) {
-    echo "Votre mail est vide";
-    echo "<br>";
-} if (empty($_GET["telephone"])) {
-    echo "Votre telephone est vide";
-    echo "<br>";
-} if (empty($_GET["adresse"])) {
-    echo "Votre adresse est vide";
-    echo "<br>";
-}
+if(empty($_GET["nom"]) || (empty($_GET["prenom"])) || (empty($_GET["mail"])) || (empty($_GET["telephone"])) || (empty($_GET["adresse"]))) {
+    echo "veuillez remplir tous les champs";
+} else {
+
 
 ?>
 <table class="table">
@@ -56,6 +44,8 @@ if(empty($_GET["nom"])) {
         </tr>
     </tbody>
 </table>
+
+<?php }?>
 
 </body>
 </html>
